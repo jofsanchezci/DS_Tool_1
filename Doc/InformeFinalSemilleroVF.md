@@ -1,296 +1,77 @@
-Desarrollo de un Parser en Python con
-ANTLR4 para el Análisis Eficiente de Datos
+# Desarrollo de un Parser en Python con
+## ANTLR4 para el Análisis Eficiente de Datos
 
-Resumen - Este documento tiene la intención de profundizar
+# Resumen - Este documento tiene la intención de profundizar
 en los conceptos que implementa nuestro parser, así como en su
 funcionamiento y capacidad informática. Se desea explicar a
 detalle sobre qué herramientas está construido, cómo funciona
 y en qué contextos puede trabajar con él.
 Glosario: Analizador lexico, sintactico, semantico
-I.
-Herramientas
+
+# I. Herramientas
 Antlr4: Es una herramienta que se usa para generar
 analizadores léxicos y sintácticos. Funciona mediante
 la definición de gramáticas formales, las cuales
 describen la estructura y las reglas de un lenguaje en
 particular.
-Python: Es un lenguaje de programación versátil y
-fácil de entender. Se utiliza en una amplia gama de
-aplicaciones, de entre las cuales destacamos el análisis
-de datos, útil para el objetivo de este semillero.
-Linux:
-Ubuntu
-es una distribución del sistema
+Python: Es un lenguaje de programación versátil y fácil de entender. Se utiliza en una amplia gama de aplicaciones, de entre las cuales destacamos el análisis de datos, útil para el objetivo de este semillero. Linux: Ubuntu es una distribución del sistema
 operativo Linux. Está diseñada para ser fácil de usar y
 accesible para todo tipo de usuarios. Cuenta con
 características como: flexibilidad, capacidad, control,
 potencia, estabilidad, actualizaciones, soporte, entre
 otras.
-II.
-Problemática
-La
-falta
-de
-herramientas
-flexibles,
-eficientes y
-personalizables en el ámbito del análisis de datos y la
-optimización de recursos computacionales, capaces de
-manejar grandes volúmenes de datos sin redundancias
-y con una carga computacional mínima, es un
-problema
-identificado
-en
-diversos
-estudios.
-Por
-ejemplo, Bandler et al. (1988) describen un algoritmo
-flexible y eficiente para la optimización que integra
-aproximaciones
-de
-gradientes,
-mejorando
-significativamente
-la
-eficiencia
-computacional
-(Bandler et al., 1988). Además, Andrade et al. (2004)
-proponen un marco de optimización de bases de datos
-que soporta la reutilización de datos y cálculos, así
-como el almacenamiento en caché semántico activo
-para acelerar la evaluación de cargas de trabajo de
-múltiples consultas (Andrade et al., 2004). Chu y
-Kemere (2021) introducen GhostiPy, una herramienta
-de análisis espectral y procesamiento de señales que
-prioriza la eficiencia y el rendimiento mediante
-algoritmos paralelos y bloqueados, superando en
-eficiencia a software comercial (Chu & Kemere,
-2021). Finalmente, Jerez (2013) presenta técnicas de
-optimización personalizada para la implementación
-eficiente en hardware, enfocadas en la toma de
-decisiones óptima en tiempo real y la reducción de
-limitaciones de memoria en plataformas embebidas
-(Jerez, 2013).
-III.
-Objetivos
-Objetivo general:
-●
-Desarrollar un parser eficiente y versátil
-utilizando Python y ANTLR4, basado en
-programación funcional, que permita realizar
-una amplia gama de operaciones matemáticas,
-trigonométricas, matriciales y de análisis de
-datos,
-incluyendo
-visualización
-gráfica,
-manipulación de archivos y optimización de
-datos,
-fomentando
-el
-aprendizaje
-y
-la
-colaboración en el desarrollo de parsers y
-análisis avanzado de datos.
-Objetivos específicos:
-●
-Diseñar e implementar un parser utilizando
-Python
-y
-ANTLR4
-capaz
-de
-manejar
-operaciones
-aritméticas
-básicas,
-funciones
-trigonométricas, cálculos matriciales y otras
-operaciones avanzadas de manera eficiente.
-●
-Implementar
-funciones
-de
-generación
-de
-gráficos, permitiendo la visualización de datos
-mediante representaciones gráficas de puntos,
+
+# II. Problemática
+La falta de herramientas flexibles,
+eficientes y personalizables en el ámbito del análisis de datos y la
+optimización de recursos computacionales, capaces de manejar grandes volúmenes de datos sin redundancias y con una carga computacional mínima, es un problema
+identificado en diversos estudios. Por ejemplo, Bandler et al. (1988) describen un algoritmo flexible y eficiente para la optimización que integra aproximaciones de gradientes, mejorando significativamente la eficiencia computacional (Bandler et al., 1988). Además, Andrade et al. (2004) proponen un marco de optimización de bases de datos que soporta la reutilización de datos y cálculos, así como el almacenamiento en caché semántico activo para acelerar la evaluación de cargas de trabajo de múltiples consultas (Andrade et al., 2004). Chu y Kemere (2021) introducen GhostiPy, una herramienta de análisis espectral y procesamiento de señales que prioriza la eficiencia y el rendimiento mediante algoritmos paralelos y bloqueados, superando en
+eficiencia a software comercial (Chu & Kemere, 2021). Finalmente, Jerez (2013) presenta técnicas de optimización personalizada para la implementación eficiente en hardware, enfocadas en la toma de
+decisiones óptima en tiempo real y la reducción de limitaciones de memoria en plataformas embebidas (Jerez, 2013).
+
+# III. Objetivos
+## Objetivo general:
+- Desarrollar un parser eficiente y versátil utilizando Python y ANTLR4, basado en programación funcional, que permita realizar
+una amplia gama de operaciones matemáticas, trigonométricas, matriciales y de análisis de datos, incluyendo visualización
+gráfica, manipulación de archivos y optimización de datos, fomentando el aprendizaje y la colaboración en el desarrollo de parsers y análisis avanzado de datos.
+
+## Objetivos específicos:
+- Diseñar e implementar un parser utilizando Python y ANTLR4 capaz de manejar operaciones aritméticas básicas, funciones
+trigonométricas, cálculos matriciales y otras operaciones avanzadas de manera eficiente.
+-  Implementar funciones de generación de gráficos, permitiendo la visualización de datos mediante representaciones gráficas de puntos,
 barras y rectas.
-●
-Mejorar la eficiencia y rendimiento del código
-del
-parser,
-optimizando
-algoritmos
-y
-estructuras de datos para garantizar un análisis
-rápido y preciso.
-●
-Realizar pruebas exhaustivas para verificar la
-precisión
-y
-confiabilidad
-del
-parser
-en
-diferentes
-escenarios,
-asegurando que las
-funciones implementadas generan resultados
-correctos y consistentes.
-IV.
-Estado del Arte
-El desarrollo de parsers, o analizadores sintácticos, ha
-sido un área crucial en la ciencia de la computación
-desde
-sus
-inicios.
-Los
-parsers
-descomponen
-estructuras
-complejas
-en
-sus
-componentes
-constitutivos,
-permitiendo
-una
-interpretación
-y
-procesamiento más eficiente de los datos.
-El desarrollo de modelos computacionales que emulan
-el parsing humano ha permitido un entendimiento más
-profundo de cómo las personas procesan el lenguaje.
-Estos modelos han ayudado a mejorar la precisión de
-los parsers en situaciones de ambigüedad y errores en
-la entrada, acercando la tecnología a la comprensión
-humana del lenguaje (Abney, 1989).
-Los primeros parsers se desarrollaron en el contexto de
-la
-compilación
-de
-programas
-informáticos.
-La
-tecnología
-de
-parsing
-se
-centraba
-en
-la
-descomposición automática de programas en sus partes
-constitutivas, facilitando la traducción de lenguajes de
-alto nivel a código máquina (Bunt & Nijholt, 2000).
+- Mejorar la eficiencia y rendimiento del código del parser, optimizando algoritmos y estructuras de datos para garantizar un análisis rápido y preciso.
+- Realizar pruebas exhaustivas para verificar la precisión y
+confiabilidad del parser en diferentes escenarios, asegurando que las funciones implementadas generan resultados correctos y consistentes.
+
+## IV. Estado del Arte
+El desarrollo de parsers, o analizadores sintácticos, ha sido un área crucial en la ciencia de la computación desde sus inicios. Los
+parsers descomponen estructuras complejas en sus componentes constitutivos, permitiendo una interpretación y procesamiento más eficiente de los datos.
+
+El desarrollo de modelos computacionales que emulan el parsing humano ha permitido un entendimiento más profundo de cómo las personas procesan el lenguaje. Estos modelos han ayudado a mejorar la precisión de los parsers en situaciones de ambigüedad y errores en la entrada, acercando la tecnología a la comprensión
+humana del lenguaje (Abney, 1989). Los primeros parsers se desarrollaron en el contexto de la compilación de programas informáticos. La tecnología de parsing se centraba en la
+descomposición automática de programas en sus partes constitutivas, facilitando la traducción de lenguajes de alto nivel a código máquina (Bunt & Nijholt, 2000).
+
 Esta tecnología también se aplicó rápidamente a otros
-campos,
-como
-el
-procesamiento
-de
-lenguajes
-naturales, debido a la similitud entre los programas
-informáticos y los textos escritos en términos de su
-estructura basada en símbolos.
-El parsing también se ha extendido a lenguajes
-multidimensionales, mejorando la comprensión de
-información de layout en textos complejos como
-diagramas y figuras (Tomita, 2001).
-El parsing ha sido central en el desarrollo de sistemas
-de traducción automática, donde se combinan métodos
-estadísticos y reglas para mejorar la precisión del
-parsing en múltiples lenguajes (Yao, 2002).
-El procesamiento del lenguaje natural (NLP) ha
-impulsado
-muchas
-de
-las
-innovaciones
-en
-la
-tecnología
-de
-parsing.
-Los
-parsers
-han
-sido
-fundamentales para la implementación de teorías
-lingüísticas y el desarrollo de aplicaciones prácticas de
-NLP. Esto incluye la traducción automática y la
-extracción de información, donde la interpretación
-correcta del texto es crucial (Sadler, 2004).
-Las innovaciones en tecnología de parsing también
-han
-impactado
-la
-compilación
-de
-lenguajes de
-programación, permitiendo una mejor extracción de
-relaciones gramaticales y procesamiento de gramáticas
-complejas (Riezler, 2006).
-La evolución de las técnicas de parsing ha sido
-continua y significativa. Desde el uso inicial de parsers
-de lenguajes libres de contexto hasta los algoritmos
-avanzados para lenguajes de programación complejos,
-la tecnología ha mejorado en términos de eficiencia y
-precisión. Los parsers se utilizan en una variedad de
-productos de software, incluyendo navegadores web y
-programas de compresión de datos (Grune & Jacobs,
-2007).
-El deep learning ha permitido avances en el parsing
-lingüístico profundo, especialmente en la robustez y
-velocidad del análisis de oraciones largas. Estas
-técnicas se han aplicado en plataformas que soportan
-búsquedas semánticas robustas y clasificación de citas
-en corpus científicos (Schäfer & Kiefer, 2009).
-Los avances en tecnología de parsing han permitido el
-desarrollo
-de
-sistemas
-adaptativos
-que
-pueden
-interactuar de manera natural con usuarios humanos y
-extenderse
-fácilmente
-a
-nuevos dominios. Estas
-técnicas son esenciales para aplicaciones como la
-traducción automática, el reconocimiento de voz y la
-minería de textos (Merlo, Bunt & Nivre, 2010).
-Las técnicas modernas de inteligencia artificial han
-integrado el parsing con otros métodos avanzados,
-creando
-sistemas
-híbridos
-con
-capacidades
-de
-resolución de problemas más flexibles y autónomas
-(Tweedale & Jain, 2014).
-Para manejar entradas incorrectas o imprevistas, se han
-desarrollado técnicas de parsing robusto y fuzzy. Estas
-técnicas
-permiten
-que
-los
-parsers
-manejen
-ambigüedades y errores en la entrada, mejorando la
-robustez y la aplicabilidad de los sistemas de parsing
-en entornos del mundo real (Carvalho, Oliveira &
+campos, como el procesamiento de lenguajes naturales, debido a la similitud entre los programas informáticos y los textos escritos en términos de su estructura basada en símbolos. El parsing también se ha extendido a lenguajes multidimensionales, mejorando la comprensión de información de layout en textos complejos como diagramas y figuras (Tomita, 2001).
+
+El parsing ha sido central en el desarrollo de sistemas de traducción automática, donde se combinan métodos estadísticos y reglas para mejorar la precisión del parsing en múltiples lenguajes (Yao, 2002). El procesamiento del lenguaje natural (NLP) haimpulsado
+muchas de las innovaciones en la tecnología de parsing. Los parsers
+han sido fundamentales para la implementación de teorías lingüísticas y el desarrollo de aplicaciones prácticas de NLP. Esto incluye la traducción automática y la extracción de información, donde la interpretación correcta del texto es crucial (Sadler, 2004). Las innovaciones en tecnología de parsing también han impactado la compilación de lenguajes de programación, permitiendo una mejor extracción de relaciones gramaticales y procesamiento de gramáticas complejas (Riezler, 2006).
+
+La evolución de las técnicas de parsing ha sido continua y significativa. Desde el uso inicial de parsers de lenguajes libres de contexto hasta los algoritmos avanzados para lenguajes de programación complejos, la tecnología ha mejorado en términos de eficiencia y precisión. Los parsers se utilizan en una variedad de
+productos de software, incluyendo navegadores web y programas de compresión de datos (Grune & Jacobs, 2007).
+
+El deep learning ha permitido avances en el parsing lingüístico profundo, especialmente en la robustez y velocidad del análisis de oraciones largas. Estas técnicas se han aplicado en plataformas que soportan búsquedas semánticas robustas y clasificación de citas en corpus científicos (Schäfer & Kiefer, 2009). Los avances en tecnología de parsing han permitido el desarrollo de sistemas
+adaptativos que pueden interactuar de manera natural con usuarios humanos y extenderse fácilmente a nuevos dominios. Estas
+técnicas son esenciales para aplicaciones como la traducción automática, el reconocimiento de voz y la minería de textos (Merlo, Bunt & Nivre, 2010). Las técnicas modernas de inteligencia artificial han integrado el parsing con otros métodos avanzados,
+creando sistemas híbridos con capacidades de resolución de problemas más flexibles y autónomas (Tweedale & Jain, 2014).
+Para manejar entradas incorrectas o imprevistas, se han desarrollado técnicas de parsing robusto y fuzzy. Estas técnicas
+permiten que los parsers manejen ambigüedades y errores en la entrada, mejorando la robustez y la aplicabilidad de los sistemas de parsing en entornos del mundo real (Carvalho, Oliveira &
 Henriques, 2014).
-El parsing también se ha resaltado como un problema
-de
-modelado
-del
-lenguaje,
-utilizando
-técnicas
+
+El parsing también se ha resaltado como un problema de
+modelado del lenguaje, utilizando técnicas
 avanzadas de redes neuronales para lograr nuevos
 estados del arte en parsing de constituyentes (Choe &
 Charniak, 2016).
@@ -312,10 +93,9 @@ tareas
 de
 procesamiento de lenguaje natural (Zanzotto, Satta &
 Cristini, 2017).
-V.
-Definición de Conceptos
-●
-Diseño de una gramática: El primer paso fue
+## V. Definición de Conceptos
+
+-Diseño de una gramática: El primer paso fue
 desarrollar una gramática que cumpla con un
 amplio
 margen,
@@ -337,8 +117,7 @@ cálculo
 necesario. Finalmente el resultado de nuestra
 gramática es el archivo “LabeledExpr.g4”,
 disponible en el repositorio.
-●
-Ejecución con Antlr4: Cada vez que se
+-  Ejecución con Antlr4: Cada vez que se
 realiza un cambio importante en la gramática,
 es necesario compilarla mediante antlr4, esto
 se hace para que los archivos que genera la
@@ -351,8 +130,7 @@ aseguran el correcto despliegue del árbol de
 análisis (Parser Tree), en otras palabras, se
 verifica que las operaciones estén bien escritas
 pero aún no realiza ningún cálculo.
-●
-Construcción del main: Implementamos el
+-  Construcción del main: Implementamos el
 parser generado por antlr4 en el lenguaje
 python, mediante la construcción de un main
 que
@@ -367,8 +145,7 @@ main sea capaz de recibir un archivo de texto
 como parámetro, este archivo (t.expr, presente
 en el repositorio) será alguna instrucción que
 esté definida en la gramática.
-●
-Desarrollo del Visitor: Este archivo (My
+-  Desarrollo del Visitor: Este archivo (My
 Visitor, presente en el repositorio) realizará el
 trabajo de un analizador semántico, dotando
 de propósito a las reglas examinadas por los
@@ -376,8 +153,7 @@ otros 2 analizadores. En este se definen y
 realizan los cálculos de todas las operaciones
 matemáticas que se deben realizar, según lo
 establecido en la gramática.
-●
-Pruebas: Una vez se cuente con un bosquejo
+- Pruebas: Una vez se cuente con un bosquejo
 general
 del
 proyecto,
@@ -403,8 +179,7 @@ los
 analizadores, verificación de casos específicos,
 resultados esperados, manejo de errores, entre
 otros.
-●
-Optimizaciones:
+-  Optimizaciones:
 Una
 vez
 que
@@ -432,12 +207,11 @@ se
 realizarán
 y
 ejecutarán para analizar los resultados.
-VI.
-Desarrollo
+## VI. Desarrollo
 Fase 1: Diseño de la Gramática
 Paso 1.1: Definición de la Gramática Base
 Acciones:
-●
+●|
 Iniciamos
 diseñando
 reglas
