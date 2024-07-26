@@ -208,68 +208,60 @@ realizarán
 y
 ejecutarán para analizar los resultados.
 ## VI. Desarrollo
-Fase 1: Diseño de la Gramática
-Paso 1.1: Definición de la Gramática Base
+### Fase 1: Diseño de la Gramática
+- **Paso 1.1: Definición de la Gramática Base**
 Acciones:
-●|
-Iniciamos
+- Iniciamos
 diseñando
 reglas
 para
 operaciones aritméticas simples, como
 suma y resta.
-●
-Gradualmente, añadimos reglas para
+-  Gradualmente, añadimos reglas para
 operaciones
 más
 complejas,
 como
 multiplicación y división.
-●
-La gramática se extendió para incluir
+-  La gramática se extendió para incluir
 operaciones trigonométricas, cálculos
 matriciales
 y
 manipulación
 de
 archivos.
-●
-Finalmente, incluimos estructuras para
+- Finalmente, incluimos estructuras para
 condicionales y bucles, asegurando
 una sintaxis clara y funcional.
-Paso 1.2: Pruebas Iniciales de Gramática
+
+- **Paso 1.2: Pruebas Iniciales de Gramática**
 Acciones:
-●
-Compilamos la gramática utilizando
+-  Compilamos la gramática utilizando
 ANTLR4
 para
 generar
 los
 analizadores léxicos y sintácticos.
-●
-Realizamos
+-  Realizamos
 pruebas
 con
 ejemplos
 simples para asegurar que el árbol de
 análisis se generará correctamente.
-●
-Ajustamos la gramática según los
+- Ajustamos la gramática según los
 resultados de las pruebas para corregir
 errores y mejorar la precisión.
-Fase 2: Ejecución con ANTLR4
-Paso 2.1: Compilación de la Gramática
+**Fase 2: Ejecución con ANTLR4**
+**Paso 2.1: Compilación de la Gramática**
 Acciones:
-●
-Ejecutamos
+-  Ejecutamos
 el
 comando
 de
 compilación de ANTLR4 para generar
 los archivos necesarios (analizadores
 léxicos y sintácticos).
-●
-Verificamos
+-  Verificamos
 que
 los
 archivos
@@ -282,9 +274,8 @@ que
 no
 hubiera
 errores en la compilación.
-Paso 2.2: Pruebas de Árbol de Análisis
-●
-Realizamos
+- **Paso 2.2: Pruebas de Árbol de Análisis**
+- Realizamos
 pruebas
 con
 varias
@@ -295,43 +286,39 @@ correctamente
 la
 estructura de las operaciones definidas
 en la gramática.
-●
-Identificamos y corregimos cualquier
+-  Identificamos y corregimos cualquier
 problema en la generación del árbol de
 análisis, ajustando las reglas de la
 gramática según fuera necesario.
-Fase 3: Construcción del Main
+- **Fase 3: Construcción del Main**
 Paso
 3.1: Implementación del Parser en
 Python
 Acciones:
-●
-Escribimos un script principal (main)
+- Escribimos un script principal (main)
 en Python que interactúa con los
 analizadores
 léxicos
 y
 sintácticos
 generados.
-●
-Configuramos el main para aceptar un
+- Configuramos el main para aceptar un
 archivo de texto como parámetro de
 entrada,
 que
 contuviera
 las
 instrucciones a ejecutar.
-Paso
+**Paso
 3.2:
 Desarrollo
 de
 la
 Lógica
 de
-Procesamiento
+Procesamiento**
 Acciones:
-●
-Implementamos la lógica para leer y
+- Implementamos la lógica para leer y
 procesar
 el
 archivo
@@ -341,24 +328,21 @@ descomponiendo
 las
 instrucciones
 según las reglas de la gramática.
-●
-Aseguramos que el main manejara
+- Aseguramos que el main manejara
 correctamente los errores de sintaxis y
 proporciona
 mensajes
 claros
 para
 facilitar la depuración.
-Fase 4: Desarrollo del Visitor
-Paso 4.1: Implementación del Analizador
+- **Fase 4: Desarrollo del Visitor**
+**Paso 4.1: Implementación del Analizador**
 Semántico
 Acciones:
-●
-Desarrollamos el Visitor (MyVisitor)
+- Desarrollamos el Visitor (MyVisitor)
 en Python, definiendo métodos para
 cada regla de la gramática.
-●
-Implementamos
+- Implementamos
 los
 cálculos
 y
@@ -369,8 +353,7 @@ regla
 se
 ejecutará
 correctamente.
-●
-Añadimos soporte para operaciones
+- Añadimos soporte para operaciones
 avanzadas,
 como
 funciones
@@ -378,25 +361,22 @@ trigonométricas,
 manipulación
 de
 matrices y visualización de datos.
-Paso 4.2: Pruebas y Verificación
+- **Paso 4.2: Pruebas y Verificación**
 Acciones:
-●
-Realizamos pruebas exhaustivas con
+- Realizamos pruebas exhaustivas con
 diversas entradas para asegurar la
 precisión de los cálculos.
-●
-Ajustamos
+- Ajustamos
 el
 Visitor
 según
 los
 resultados de las pruebas para corregir
 errores y mejorar la eficiencia.
-Fase 5: Pruebas Exhaustivas
-Paso 5.1: Pruebas Funcionales
+- **Fase 5: Pruebas Exhaustivas**
+**Paso 5.1: Pruebas Funcionales**
 Acciones:
-●
-Diseñamos conjuntos de pruebas para
+- Diseñamos conjuntos de pruebas para
 evaluar la funcionalidad de todas las
 operaciones definidas en la gramática,
 incluyendo
@@ -408,8 +388,7 @@ operaciones
 matriciales,
 condicionales, bucles y manipulación
 de archivos.
-●
-Ejecutamos
+- Ejecutamos
 las
 pruebas
 y
@@ -421,19 +400,16 @@ que
 cada
 operación
 generará los resultados esperados.
-●
-Identificamos y corregimos cualquier
+- Identificamos y corregimos cualquier
 problema, optimizando las reglas y el
 código según fuera necesario.
-Paso 5.2: Manejo de Errores
+**Paso 5.2: Manejo de Errores**
 Acciones:
-●
-Implementamos manejo de errores en
+- Implementamos manejo de errores en
 el Visitor y el main para proporcionar
 mensajes claros y útiles en caso de
 entradas incorrectas.
-●
-Realizamos
+- Realizamos
 pruebas
 con
 entradas
@@ -448,22 +424,19 @@ la
 depuración.
 Paso 5.3: Pruebas de Rendimiento
 Acciones:
-●
-Ejecutamos pruebas de rendimiento
+- Ejecutamos pruebas de rendimiento
 utilizando grandes volúmenes de datos
 y operaciones complejas para medir el
 tiempo de procesamiento y el uso de
 recursos.
-●
-Analizamos
+- Analizamos
 los
 resultados
 de
 las
 pruebas para identificar cuellos de
 botella y áreas de mejora.
-●
-Optimizamos
+- Optimizamos
 el
 código
 y
@@ -475,11 +448,11 @@ reducir
 la
 carga
 computacional.
-Fase 6: Optimizaciones
-Paso 6.1: Mejoras de Código
+
+- **Fase 6: Optimizaciones**
+**Paso 6.1: Mejoras de Código**
 Acciones:
-●
-Revisamos el código del Visitor y el
+- Revisamos el código del Visitor y el
 main
 para
 mejorar
@@ -489,21 +462,18 @@ eliminando
 redundancias
 y
 simplificando las estructuras.
-●
-Documentamos el código para facilitar
+- Documentamos el código para facilitar
 su
 comprensión
 y
 mantenimiento
 futuro.
-Paso 6.2: Optimización de Algoritmos
+- **Paso 6.2: Optimización de Algoritmos**
 Acciones:
-●
-Analizamos los algoritmos utilizados
+- Analizamos los algoritmos utilizados
 en el Visitor y el main para identificar
 áreas de mejora.
-●
-Implementamos
+- Implementamos
 mejoras
 en
 los
@@ -513,8 +483,7 @@ asegurando que las operaciones se
 realizarán de manera eficiente.
 Paso 6.3: Evaluación de Parámetros
 Acciones:
-●
-Definimos
+- Definimos
 parámetros
 clave
 para
@@ -523,8 +492,7 @@ la legibilidad del código, tiempo de
 procesamiento, cantidad de cálculos
 necesarios y relevancia de funciones y
 variables.
-●
-Realizamos ajustes en las reglas y el
+- Realizamos ajustes en las reglas y el
 código según los resultados de la
 evaluación
 para
@@ -534,8 +502,7 @@ rendimiento del parser.
 Fase 7: Implementación de Funciones Avanzadas
 Paso 7.1: Visualización de Datos
 Acciones:
-●
-Añadimos soporte en el Visitor para la
+- Añadimos soporte en el Visitor para la
 generación de gráficos de puntos,
 barras
 y
@@ -543,14 +510,12 @@ rectas,
 permitiendo
 la
 visualización de datos.
-●
-Realizamos pruebas para verificar que
+- Realizamos pruebas para verificar que
 las funciones de visualización generan
 gráficos correctos y precisos.
 Paso 7.2: Manipulación de Archivos
 Acciones:
-●
-Implementamos
+- Implementamos
 funciones
 en
 el
@@ -564,18 +529,15 @@ de
 archivos
 en
 diferentes formatos.
-●
-Realizamos pruebas para verificar que
+- Realizamos pruebas para verificar que
 las funciones de manipulación de
 archivos funcionaran correctamente en
 diversos escenarios.
 Paso 7.3: Integración de Cálculos Lambda
 Acciones:
-●
-Añadimos reglas en la gramática para
+- Añadimos reglas en la gramática para
 definir y utilizar funciones lambda.
-●
-Implementamos la lógica en el Visitor
+- Implementamos la lógica en el Visitor
 para
 evaluar
 y
@@ -585,48 +547,48 @@ lambda,
 permitiendo
 operaciones
 dinámicas y flexibles.
-●
-Realizamos pruebas para verificar la
+- Realizamos pruebas para verificar la
 correcta ejecución de cálculos lambda,
 asegurando su precisión y eficiencia.
-VII.
-Resultados
+
+## VII. Resultados
 Definimos múltiples instrucciones para poner a prueba
 la capacidad de nuestro proyecto, de menor a mayor
 complejidad, estas fueron algunas operaciones que
 realizamos:
-●
-Suma, resta, multiplicación, división,
+- Suma, resta, multiplicación, división,
 potenciación, módulo.
 Código: ((10 * 5) / (8+2)) ^ 2
 Imagen 1. Resultado de operaciones matemáticas.
 Imagen 1.1. Resultado del código obtenido en Java.
-●
-Cálculo de funciones trigonométricas.
+- Cálculo de funciones trigonométricas.
 Código: SIN(90,Radians) + (COS(0) / (COS(0)+1))
 Imagen 2. Resultado de funciones trigonométricas.
 Imagen 2.1. Resultado del código obtenido en Java.
-●
-Operaciones matriciales.
+- Operaciones matriciales.
+```
 Código: a = [[1,2],[3,4]]
 b = INV(a)
 c = TRAS(a*b)
 c
+```
 Imagen 3. Resultado de operaciones matriciales.
 Imagen 3.1. Resultado del código obtenido en Java.
-●
-Dibujo de funciones.
+- Dibujo de funciones.
+```
 Código: DRAW(TAN(X),0,10,100)
+```
 Imagen 4. Resultado de dibujo de funciones.
 Imagen 4.1. Resultado del código obtenido en Python.
-●
-Dibujos Datasets
+- Dibujos Datasets
+```
 Código: a = READ(open,Header)
 SCATTER(a,edad,peso)
+```
 Imagen 5. Resultado de dibujo de datasets.
 Imagen 5.1. Resultado del código obtenido en Python.
-●
-Condicionales y bucle
+- Condicionales y bucle
+```
 Código:a = 10
 b = 10
 if a > b {
@@ -639,10 +601,11 @@ for(0,10,1){
 c = c+1
 }
 c
+```
 Imagen 6. Resultado de condicionales y bucles.
 Imagen 6.1. Resultado del código obtenido en Java.
-●
-Apertura y escritura de archivos.
+- Apertura y escritura de archivos.
+```
 Código: a = READ(open,Header)
 b = [[1,2],[3,4],[5,6]]
 c = a*b
@@ -656,24 +619,28 @@ Open resultado: edad,peso
 60,280.0
 125,
 Tiempo de ejecucion: 0.0796422
-●
-Operaciones sobre datasets.
+```
+- Operaciones sobre datasets.
+
+```
 Código: a = READ(open,Header)
 a = FILLNA(a)
 a
 SCATTER(a,edad,peso)
+```
 Imagen 7. Resultado de grafica de operaciones sobre datasets.
 Imagen 8. Resultado de operaciones sobre datasets.
 Imagen 8.1. Resultado del código obtenido en Python.
-●
-Definición de funciones con cálculo lambda
+- Definición de funciones con cálculo lambda
+```
 Código: b = lambda x,y,z : x+y*x/z
 c = b(2,2,3)
 c
+```
 Imagen 9. Resultado de funciones con cálculo lambda.
 Imagen 9.1. Resultado del código obtenido en Java.
-●
-Calcular Indice masa corporal
+- Calcular Indice masa corporal
+```
 Código: data = READ(csvPesos,Header)
 data = DROP(data,edad)
 data = FILLNA(data)
@@ -691,9 +658,11 @@ resultado
 PesosYestaturas =
 CONCAT_COLUMN(estatura,masas)
 SCATTER(PesosYestaturas, estatura, peso)
+```
 Imagen 10. Resultado de Calculo IMC
 Imagen 11. Resultado de gráfica de IMC
 Imagen 11.1. Resultado del código obtenido en Java.
+
 Todos los problemas ingresados arrojaron el resultado
 esperado, esto incluye casos donde el proyecto debía
 detenerse por algún error de sintaxis, operaciones
@@ -714,9 +683,8 @@ adecuadamente,
 según
 los
 parámetros
-preestablecidos para el semillero.
-VIII.
-Cómo usarlo
+preestablecidos.
+# VIII. Cómo usarlo
 Dar uso al proyecto es bastante simple, primero es
 necesario
 verificar
@@ -756,12 +724,7 @@ el
 repositorio, y si es posible ver la gramática para
 entender un poco más acerca de cómo construir una
 instrucción.
-IX.
-Beneficios
-de
-construir
-e
-implementar un parser
+# IX. Beneficios de construir e implementar un parser
 El
 desarrollo
 de
@@ -879,6 +842,7 @@ y
 condiciones,
 mejorando la experiencia del usuario y la fiabilidad del
 sistema.
+```
 Código: a = b+5
 a
 Imagen 17. Prueba error en código.
@@ -886,9 +850,9 @@ Código: a = [[1,2],[3,4]
 b = INVa)
 c = TRASa*b)
 c
+```
 Imagen 18. Prueba error en código.
-X.
-Conclusiones
+## X. Conclusiones
 El desarrollo del parser en Python utilizando ANTLR4
 ha demostrado ser una solución efectiva y versátil para
 el análisis de datos y la ejecución de operaciones
@@ -988,8 +952,7 @@ desarrollo continuo en el ámbito del análisis avanzado
 de datos, proporcionando una base sólida para futuros
 proyectos de machine learning y exploraciones en este
 campo.
-XI.
-Bibliografías
+## XI.Referencias
 1.
 Bunt, H., & Nijholt, A. (2000). Parsing
 Technologies.
